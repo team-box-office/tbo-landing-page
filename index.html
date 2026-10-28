@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TBO — Ticketing built for high school sports</title>
+    <!-- [REVIEW] page title: product name "TBO" and tagline both invented -->
+    <meta
+      name="description"
+      content="Sell tickets, scan at the gate, and keep more of every dollar. Built for athletic directors, booster clubs, and the fans who show up."
+    />
+    <!-- [REVIEW] meta description invented -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="#">
+          <span class="brand__mark" aria-hidden="true">T</span>
+          <!-- [REVIEW] logo is a placeholder letter mark; swap in your real logo file -->
+          <span class="brand__name">TBO</span>
+          <!-- [REVIEW] brand name "TBO" assumed from folder name -->
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#how-it-works">How it works</a>
+          <a href="#demo" class="btn btn--small">Book a demo</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <p class="eyebrow">For athletic directors, booster clubs &amp; fans</p>
+          <!-- audience from your brief -->
+          <h1 class="hero__title">
+            The simplest way to sell tickets for high school sports.
+          </h1>
+          <!-- [REVIEW] headline invented -->
+          <p class="hero__sub">
+            Set up events in minutes. Get fans through the gate faster. Keep more of every dollar.
+          </p>
+          <!-- [REVIEW] subhead invented; swap in your real differentiator -->
+          <div class="hero__ctas">
+            <a href="#demo" class="btn btn--primary">Book a demo</a>
+            <a href="#how-it-works" class="btn btn--ghost">See how it works</a>
+          </div>
+          <p class="hero__trust">
+            Trusted by schools and leagues across [REGION / NUMBER].
+          </p>
+          <!-- [REVIEW] social proof invented; replace with real stat or remove -->
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how-it-works" class="how">
+        <div class="container">
+          <h2 class="section-title">How it works</h2>
+          <p class="section-sub">
+            Three steps from empty bleachers to full house.
+          </p>
+          <!-- [REVIEW] section subtitle invented -->
+          <ol class="steps">
+            <li class="step">
+              <div class="step__num">1</div>
+              <h3 class="step__title">Create your event</h3>
+              <p class="step__body">
+                Add games, set prices, choose general admission or reserved seating. [REVIEW: confirm feature list]
+              </p>
+            </li>
+            <li class="step">
+              <div class="step__num">2</div>
+              <h3 class="step__title">Share the link</h3>
+              <p class="step__body">
+                Post to your athletic site, team pages, or social — fans buy on any device. [REVIEW]
+              </p>
+            </li>
+            <li class="step">
+              <div class="step__num">3</div>
+              <h3 class="step__title">Scan at the gate</h3>
+              <p class="step__body">
+                Volunteers scan QR codes with any phone. No special hardware. [REVIEW]
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="demo" class="cta">
+        <div class="container cta__inner">
+          <h2 class="cta__title">Ready to see it in action?</h2>
+          <p class="cta__sub">
+            Pick a 20-minute slot. We&rsquo;ll walk you through a real event setup.
+          </p>
+          <!-- [REVIEW] CTA copy invented -->
+          <a href="mailto:hello@example.com" class="btn btn--primary btn--large">
+            Book a demo
+          </a>
+          <!-- [REVIEW] placeholder email — swap for your real contact or Calendly link -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>&copy; <span id="year"></span> TBO. All rights reserved.</p>
+        <!-- [REVIEW] company name -->
+        <nav aria-label="Footer">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="mailto:hello@example.com">Contact</a>
+          <!-- [REVIEW] footer links are placeholders -->
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

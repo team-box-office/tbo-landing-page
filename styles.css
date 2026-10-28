@@ -1,0 +1,351 @@
+/* ============================================================
+   TBO landing page — styles.css
+   The big knobs live here. Change colors or spacing in :root
+   below and the whole page updates.
+   ============================================================ */
+
+:root {
+  /* [REVIEW] colors — placeholder palette (navy + warm orange).
+     Swap for your brand hex codes. */
+  --color-ink: #0a2540;       /* primary deep navy, used for text and dark bg */
+  --color-ink-soft: #1b3658;  /* slightly lighter navy */
+  --color-accent: #f5a623;    /* warm orange, used for buttons and highlights */
+  --color-accent-hover: #e0951a;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f5f7fa;   /* very light gray-blue, section backgrounds */
+  --color-text: #1a1a1a;
+  --color-muted: #5a6472;
+  --color-border: #e3e8ef;
+
+  /* Type */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Layout */
+  --container-max: 1120px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(10, 37, 64, 0.06);
+  --shadow-md: 0 8px 24px rgba(10, 37, 64, 0.08);
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  color: var(--color-ink);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-border);
+}
+
+.btn--ghost:hover {
+  background: var(--color-bg-soft);
+}
+
+.btn--small {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+}
+
+.btn--large {
+  padding: 18px 32px;
+  font-size: 1.1rem;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 10;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.brand:hover { text-decoration: none; }
+
+.brand__mark {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--color-ink);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.brand__name {
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-nav a {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 96px 0 72px;
+  background:
+    radial-gradient(1200px 400px at 10% -10%, rgba(245, 166, 35, 0.12), transparent 60%),
+    radial-gradient(1000px 500px at 110% 0%, rgba(10, 37, 64, 0.08), transparent 60%),
+    var(--color-bg);
+}
+
+.hero__inner {
+  text-align: center;
+  max-width: 820px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 20px;
+  padding: 6px 14px;
+  background: var(--color-bg-soft);
+  color: var(--color-ink-soft);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+}
+
+.hero__sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--color-muted);
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.hero__trust {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---------- How it works ---------- */
+
+.how {
+  padding: 80px 0;
+  background: var(--color-bg-soft);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--color-muted);
+  margin: 0 auto 48px;
+  max-width: 540px;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step {
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.step__num {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.step__title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.step__body {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* ---------- CTA ---------- */
+
+.cta {
+  padding: 96px 0;
+  background: var(--color-ink);
+  color: #fff;
+  text-align: center;
+}
+
+.cta__title {
+  color: #fff;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 12px;
+}
+
+.cta__sub {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto 32px;
+  max-width: 540px;
+  font-size: 1.1rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer nav {
+  display: flex;
+  gap: 20px;
+}
+
+.site-footer a {
+  color: var(--color-muted);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 720px) {
+  .hero { padding: 64px 0 48px; }
+  .how, .cta { padding: 64px 0; }
+  .steps { grid-template-columns: 1fr; }
+  .site-nav a:not(.btn) { display: none; } /* collapse text links on small screens */
+}
